@@ -6,22 +6,21 @@ myApp.controller('MenuController',['menuservice','$state',function(menuservice,$
 
         if (currentUser) {
 
-
-          function populatemenu(){
-              menu.menuitems = menuservice.getdata();
-          }
-
-          menu.logout = function(){
-            Parse.User.logOut();
-          }
-
-          menu.menuitems = [];
-          populatemenu();
-
-
         } else {
             $state.go('home');
         }
+
+        function populatemenu(){
+            menu.menuitems = menuservice.getdata();
+        }
+
+        menu.logout = function(){
+          Parse.User.logOut();
+          $state.go('home');
+        }
+
+        menu.menuitems = [];
+        populatemenu();
 
 
 
