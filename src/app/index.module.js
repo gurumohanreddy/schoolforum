@@ -1,7 +1,1 @@
-(function() {
-  'use strict';
-
-  angular
-    .module('schoolforum', ['ngResource', 'ui.router', 'toastr']);
-
-})();
+var myApp  = angular.module('schoolforum', ['ui.router', 'toastr']);
