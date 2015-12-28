@@ -1,0 +1,16 @@
+<acme-navbar></acme-navbar>
+<div class="container mainscreentray">
+   <!-- <br> -->
+     <div class="row">
+        <div class="col-sm-6 col-md-4 col-xs-10" ng-repeat="item in menu.menuitems">
+          <div class="thumbnail mainscreenitems">
+            <!-- <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}"> -->
+            <div class="caption ">
+              <a href="{{item.link}}"><h3>{{ item.title }}</h3></a>
+              <p>{{ item.title }}</p>
+              <!-- <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>

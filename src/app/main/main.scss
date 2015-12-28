@@ -1,20 +1,31 @@
-#loginbox{
-
-margin-top:50px;
-
-  .fpassword{
-    float:right;
-     font-size: 80%;
-      position: relative;
-       top:-10px
-  }
-
-  .panel-body{
-    padding-top:30px;
-    .input-group{
-      margin-bottom: 25px;
-    }
+.login{
+  position: absolute;
+    margin:auto;
+    top: 50%;
+    transform: translateY(-50%);
 
   }
+.loginbtn{
+  background-color: #2ecc71;
+  color: #FFF;
+  border-color: none;
+  // font-size: 10px;
+}
+
+#login{
+  background-image: url('/assets/images/background.jpg');
+  width:100vw;
+  height: 100vh;
+  background-position:center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.welllogin{
+  background-color: #7f8c8d;
+  // border-color: #E985AC;
 
 }
