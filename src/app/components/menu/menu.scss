@@ -20,3 +20,20 @@
     }
 
 }
+
+.navbar-default{
+  background-color: #1ABC9C;
+}
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand,.navbar-default .navbar-nav > li > a,.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color:#FFF;
+}
+
+.navbar{
+  border-radius: 0px;
+
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+    background-color:#009688;
+    color:#FFF;
+}
