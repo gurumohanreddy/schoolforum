@@ -5,7 +5,7 @@ myApp.controller('MainController',['$state',function($state){
   Parse.initialize("OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW","B6fAQ3HcASbpb4hKrAVoVgMy5p2U5CGe3CXLGJPg");
 
       main.login = function(){
-        console.log("Entered");
+        console.log("Establish a connection with parse...");
 
           Parse.User.logIn(main.username, main.password, {
               success: function(user) {
@@ -35,7 +35,7 @@ myApp.controller('MainController',['$state',function($state){
 
         }
 
-            
+
 
 
 }]);

@@ -1,0 +1,74 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/mainscreen">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/menu">Home</a></li>
+        <li><a href= " " ng-click="students.logout()" >Logout</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <!-- Button trigger modal -->
+  <button type="button" class="modelbox" data-toggle="modal" data-target="#myModal"></button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add Student</h4>
+        </div>
+        <div class="modal-body">
+          <form ng-submit="managestudent.addstudent()">
+          <div class="form-group">
+            <label for="studentname">Student Name</label>
+          <input type="text" class="form-control"  placeholder="Student Name" ng-model="managestudent.newstudent.studentname">
+          </div>
+          <div class="form-group">
+            <label for="parentname">Parent Name</label>
+          <input type="text" class="form-control" placeholder="Parent Name" ng-model="managestudent.newstudent.parentname">
+          </div>
+          <div class="form-group">
+            <label for="parentemail">Parent email</label>
+          <input type="email" class="form-control"  placeholder="eg:something@gmail.com" ng-model="managestudent.newstudent.parentemail">
+          </div>
+          <div class="form-group">
+            <label for="class">Class</label>
+          <select class="form-control" ng-model="managestudent.newstudent.studentclass" >
+            <option value="Kinder Garten">kindergarten</option>
+            <option value="LKG">LKG</option>
+            <option value="UKG">UKG</option>
+          </select>
+          </div>
+
+          <div class="form-group">
+          <label for="inputfile">Student Pic</label>
+        <input type="file" id ="fileinput" ng-click = "managestudent.tingu()">
+        </div>
+          <hr>
+          <button type="submit" class="btn btn-primary ">Submit</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+
+      </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

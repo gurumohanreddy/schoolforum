@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/mainscreen">Brand</a>
+      <a class="navbar-brand" href="#/menu">Brand</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,7 +29,7 @@
           <div class="thumbnail mainscreenitems">
             <!-- <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}"> -->
             <div class="caption ">
-              <a href="{{item.link}}"><h3>{{ item.title }}</h3></a>
+              <a ui-sref="{{item.link}}"><h3>{{ item.title }}</h3></a>
               <p>{{ item.title }}</p>
               <!-- <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p> -->
             </div>

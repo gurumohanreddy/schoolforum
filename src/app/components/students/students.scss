@@ -1,0 +1,27 @@
+.text_align{
+  text-align: center;
+  color: #2c3e50;
+}
+
+.modelbox{
+  width: 60px;
+  height: 60px;
+  background-image: url('/assets/images/addstudent.png');
+  border-radius: 50%;
+  background-position:center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:#2ecc71;
+  border-color: transparent;
+  border: none;
+}
+.modelbox:focus{
+  outline-color: transparent;
+}
+
+img{
+  width:100px;
+  height: 100px;
+}

@@ -4,7 +4,7 @@ myApp.service('menuservice',function(){
               var data = [
                 {
                   'title': 'Manage Student',
-                  'link': 'managestudent'
+                  'link': 'students'
                 },
                 {
                   'title':'Manage Class',

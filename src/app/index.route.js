@@ -1,5 +1,7 @@
 myApp.config(function($stateProvider, $urlRouterProvider){
 
+             $urlRouterProvider.otherwise('/menu');
+
               $stateProvider
               .state('home',{
                url:'/',
@@ -12,10 +14,12 @@ myApp.config(function($stateProvider, $urlRouterProvider){
                 templateUrl:'app/components/menu/menu.html',
                 controller:'MenuController',
                 controllerAs:'menu'
+                })
+                .state('students',{
+                 url:'/students',
+                 templateUrl:'app/components/students/students.html',
+                 controller:'StudentsController',
+                 controllerAs:'students'
                 });
-
-
-             $urlRouterProvider.otherwise('/');
-
 
 });
