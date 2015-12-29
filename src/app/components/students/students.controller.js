@@ -29,20 +29,36 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                    method: 'POST',
                    url: 'https://api.parse.com/1/classes/students',
                    headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
-                   'X-Parse-Revocable-Session': '1','Content-Type': 'application/json'},
+                   'Content-Type': 'application/json'},
                    data: students.newstudent
 
                 }).success(function(data){
+                   console.log(data);
+                   $state.go('students');
+
+                }).error(function(data){
                    console.log(data)
+                });
+            students.initialize();
+        }
+
+        students.loadallstudents = function(){
+          $http({
+                   method: 'GET',
+                   url: 'https://api.parse.com/1/classes/students',
+                   headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
+                   'Content-Type': 'application/json'},
+
+                }).success(function(data){
+                   console.log(data);
                    $state.go('students');
 
                 }).error(function(data){
                    console.log(data)
                 });
 
-            students.initialize();
         }
 
-            students.initialize();
-
+          students.loadallstudents();
+          students.initialize();
 }]);
