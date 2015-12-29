@@ -44,6 +44,10 @@
           <input type="text" class="form-control" placeholder="Parent Name" ng-model="students.newstudent.parentname">
           </div>
           <div class="form-group">
+            <label for="phone">Roll No:</label>
+          <input type="number" class="form-control"  placeholder="eg:9000000000" ng-model="students.newstudent.contact">
+          </div>
+          <div class="form-group">
             <label for="parentemail">Parent email</label>
           <input type="email" class="form-control"  placeholder="eg:something@gmail.com" ng-model="students.newstudent.parentemail">
           </div>
@@ -86,6 +90,7 @@
     <th>Name</th>
     <th>Class</th>
     <th>Parent Name</th>
+    <th>Contact Info</th>
     <th>Parent Email</th>
     </tr>
   </thead>
@@ -95,6 +100,7 @@
     <td>{{student.studentname}}</td>
     <td>{{student.studentclass}}</td>
     <td>{{student.parentname}}</td>
+    <td>{{student.contact}}</td>
     <td>{{student.parentemail}}</td>
   </tr>
   </tbody>

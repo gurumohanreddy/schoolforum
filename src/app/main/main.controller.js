@@ -19,19 +19,6 @@ myApp.controller('MainController',['$state',function($state){
               }
           });
 
-          // var user = new Parse.User();
-          // user.set("username", main.username);
-          // user.set("password", main.password);
-          // user.signUp(null, {
-          //   success: function(user) {
-          //     console.log("successfull");
-          //     $state.go('menu');
-          //   },
-          //   error: function(user, error) {
-          //     // Show the error message somewhere and let the user try again.
-          //     alert("Error: " + error.code + " " + error.message);
-          //   }
-          // });
 
         }
 
