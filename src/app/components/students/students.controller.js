@@ -30,6 +30,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                 }).success(function(data){
                    console.log(data);
                    $state.go('students');
+                   students.loadallstudents();
 
                 }).error(function(data){
                    console.log(data)
@@ -48,7 +49,6 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                    console.log('Getting data from parse...');
                    students.loadstudents = data;
                    $state.go('students');
-
                 }).error(function(data){
                    console.log(data)
                 });
@@ -66,5 +66,5 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
             $state.go('home');
         }
 
-        
+
 }]);

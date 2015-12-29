@@ -89,13 +89,13 @@
     <th>Parent Email</th>
     </tr>
   </thead>
-  <tbody ng-repeat="student in students.loadstudents">
-    <tr ng-repeat="std in student">
-    <td>{{std.rollno}}</td>
-    <td>{{std.studentname}}</td>
-    <td>{{std.studentclass}}</td>
-    <td>{{std.parentname}}</td>
-    <td>{{std.parentemail}}</td>
+  <tbody ng-repeat="student in students.loadstudents.results">
+    <tr >
+    <td>{{student.rollno}}</td>
+    <td>{{student.studentname}}</td>
+    <td>{{student.studentclass}}</td>
+    <td>{{student.parentname}}</td>
+    <td>{{student.parentemail}}</td>
   </tr>
   </tbody>
 </table>
