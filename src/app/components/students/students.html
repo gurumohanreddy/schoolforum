@@ -75,4 +75,32 @@
       </div>
     </div>
   </div>
+
+<hr>
+<!-- displaying the data -->
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    <th>Roll No</th>
+    <th>Name</th>
+    <th>Class</th>
+    <th>Parent Name</th>
+    <th>Parent Email</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="student in students.loadstudents">
+    <tr ng-repeat="std in student">
+    <td>{{std.rollno}}</td>
+    <td>{{std.studentname}}</td>
+    <td>{{std.studentclass}}</td>
+    <td>{{std.parentname}}</td>
+    <td>{{std.parentemail}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
 </div>

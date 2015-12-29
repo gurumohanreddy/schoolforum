@@ -21,7 +21,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         students.initialize = function(){
           students.newstudent = {};
-
+          students.loadstudents = [];
         }
 
         students.addstudent = function(){
@@ -51,6 +51,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
                 }).success(function(data){
                    console.log(data);
+                   students.loadstudents = data;
                    $state.go('students');
 
                 }).error(function(data){
@@ -59,6 +60,6 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         }
 
-          students.loadallstudents();
           students.initialize();
+          students.loadallstudents();
 }]);
