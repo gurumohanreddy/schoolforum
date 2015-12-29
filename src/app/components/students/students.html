@@ -34,32 +34,36 @@
           <h4 class="modal-title" id="myModalLabel">Add Student</h4>
         </div>
         <div class="modal-body">
-          <form ng-submit="managestudent.addstudent()">
+          <form ng-submit="students.addstudent()">
           <div class="form-group">
             <label for="studentname">Student Name</label>
-          <input type="text" class="form-control"  placeholder="Student Name" ng-model="managestudent.newstudent.studentname">
+          <input type="text" class="form-control"  placeholder="Student Name" ng-model="students.newstudent.studentname">
           </div>
           <div class="form-group">
             <label for="parentname">Parent Name</label>
-          <input type="text" class="form-control" placeholder="Parent Name" ng-model="managestudent.newstudent.parentname">
+          <input type="text" class="form-control" placeholder="Parent Name" ng-model="students.newstudent.parentname">
           </div>
           <div class="form-group">
             <label for="parentemail">Parent email</label>
-          <input type="email" class="form-control"  placeholder="eg:something@gmail.com" ng-model="managestudent.newstudent.parentemail">
+          <input type="email" class="form-control"  placeholder="eg:something@gmail.com" ng-model="students.newstudent.parentemail">
           </div>
           <div class="form-group">
             <label for="class">Class</label>
-          <select class="form-control" ng-model="managestudent.newstudent.studentclass" >
+          <select class="form-control" ng-model="students.newstudent.studentclass" >
             <option value="Kinder Garten">kindergarten</option>
             <option value="LKG">LKG</option>
             <option value="UKG">UKG</option>
           </select>
           </div>
-
+          <div class="form-group">
+            <label for="roll_no">Roll No:</label>
+          <input type="number" class="form-control"  placeholder="123" ng-model="students.newstudent.rollno">
+          </div>
+<!--
           <div class="form-group">
           <label for="inputfile">Student Pic</label>
-        <input type="file" id ="fileinput" ng-click = "managestudent.tingu()">
-        </div>
+        <input type="file" id ="fileinput" ng-click = "students.tingu()">
+        </div> -->
           <hr>
           <button type="submit" class="btn btn-primary ">Submit</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
