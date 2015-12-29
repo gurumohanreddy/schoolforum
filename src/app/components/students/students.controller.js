@@ -6,11 +6,6 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
         restId = 'TKEZxU6JOZAsTwlpbPhAnJlstvn938KtuzNhFDCU';
         var currentUser = Parse.User.current();
 
-        if (currentUser) {
-
-        } else {
-            $state.go('home');
-        }
 
         students.logout = function(){
           console.log("Logged Out")
@@ -50,7 +45,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                    'Content-Type': 'application/json'},
 
                 }).success(function(data){
-                   console.log(data);
+                   console.log('Getting data from parse...');
                    students.loadstudents = data;
                    $state.go('students');
 
@@ -60,6 +55,16 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         }
 
+          // students.initialize();
+          // students.loadallstudents();
+        if (currentUser) {
           students.initialize();
           students.loadallstudents();
+
+        } else {
+            console.log("Not logged In");
+            $state.go('home');
+        }
+
+        
 }]);
