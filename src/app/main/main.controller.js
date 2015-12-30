@@ -3,13 +3,13 @@ myApp.controller('MainController',['$state',function($state){
         var main = this;
 
   Parse.initialize("OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW","B6fAQ3HcASbpb4hKrAVoVgMy5p2U5CGe3CXLGJPg");
-
+  var currentUser = Parse.User.current();
         if (currentUser) {
           console.log("Already logged In");
           $state.go('menu');
 
         } else {
-            console.log("Not yet logged in:main page")
+            console.log("Not yet logged in:main page");
         }
 
       main.login = function(){
@@ -29,8 +29,6 @@ myApp.controller('MainController',['$state',function($state){
 
 
         }
-
-
 
 
 
