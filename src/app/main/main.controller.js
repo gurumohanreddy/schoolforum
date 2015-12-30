@@ -4,6 +4,14 @@ myApp.controller('MainController',['$state',function($state){
 
   Parse.initialize("OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW","B6fAQ3HcASbpb4hKrAVoVgMy5p2U5CGe3CXLGJPg");
 
+        if (currentUser) {
+          console.log("Already logged In");
+          $state.go('menu');
+
+        } else {
+            console.log("Not yet logged in:main page")
+        }
+
       main.login = function(){
         console.log("Establish a connection with parse...");
 
@@ -22,7 +30,7 @@ myApp.controller('MainController',['$state',function($state){
 
         }
 
-        
+
 
 
 
