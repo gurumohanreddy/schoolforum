@@ -2,9 +2,8 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         var students = this;
         Parse.initialize("OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW","B6fAQ3HcASbpb4hKrAVoVgMy5p2U5CGe3CXLGJPg");
-        appId ='OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW';
-        restId = 'TKEZxU6JOZAsTwlpbPhAnJlstvn938KtuzNhFDCU';
         var currentUser = Parse.User.current();
+
 
 
         students.logout = function(){
@@ -58,6 +57,9 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
           // students.initialize();
           // students.loadallstudents();
         if (currentUser) {
+          console.log(currentUser);
+          appId ='OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW';
+          restId = 'TKEZxU6JOZAsTwlpbPhAnJlstvn938KtuzNhFDCU';
           students.initialize();
           students.loadallstudents();
 

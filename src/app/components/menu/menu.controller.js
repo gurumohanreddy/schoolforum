@@ -5,7 +5,7 @@ myApp.controller('MenuController',['menuservice','$state',function(menuservice,$
         var currentUser = Parse.User.current();
 
         if (currentUser) {
-
+            console.log(currentUser);
         } else {
             console.log("Not logged In");
             $state.go('home');

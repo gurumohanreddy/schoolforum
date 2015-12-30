@@ -1,6 +1,6 @@
 myApp.config(function($stateProvider, $urlRouterProvider){
 
-             $urlRouterProvider.otherwise('/menu');
+             $urlRouterProvider.otherwise('/');
 
               $stateProvider
               .state('home',{
