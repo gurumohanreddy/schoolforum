@@ -14,35 +14,68 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
 
         students.initialize = function(){
+          students.modalname = "Add student";
           students.newstudent = {};
           students.loadstudents = [];
+          students.loadallstudents();
         }
 
         students.addstudent = function(){
-          $http({
-                   method: 'POST',
-                   url: 'https://api.parse.com/1/classes/students',
+
+
+          if (students.modalname === "Add student"){
+            console.log("calling POST");
+            $http({
+                     method: 'POST',
+                     url: 'https://api.parse.com/1/classes/students',
+                     headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
+                     'Content-Type': 'application/json'},
+                     data: students.newstudent
+
+                  }).success(function(data){
+                     console.log(data);
+                     $state.go('students');
+                     students.loadallstudents();
+
+                  }).error(function(data){
+                     console.log(data)
+                  });
+              students.initialize();
+          }
+
+
+          else {
+
+            console.log("calling PUT");
+            $http({
+                   method: 'PUT',
+                   url: 'https://api.parse.com/1/classes/students/'+(students.newstudent.objectId),
                    headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
-                   'Content-Type': 'application/json'},
+                             'Content-Type': 'application/json'},
                    data: students.newstudent
 
                 }).success(function(data){
-                   console.log(data);
-                   $state.go('students');
-                   students.loadallstudents();
+                   console.log(data)
 
                 }).error(function(data){
                    console.log(data)
+
                 });
-            students.initialize();
-        }
+
+                students.initialize();
+
+          }
+
+}
+
+
 
         students.loadallstudents = function(){
           $http({
                    method: 'GET',
                    url: 'https://api.parse.com/1/classes/students',
                    headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
-                   'Content-Type': 'application/json'},
+                   'Content-Type': 'application/json'}
 
                 }).success(function(data){
                    console.log('Getting data from parse...');
@@ -54,14 +87,22 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         }
 
-          // students.initialize();
-          // students.loadallstudents();
+        students.editstudent = function(student){
+
+            console.log(student);
+            students.modalname = "Edit student";
+            students.newstudent = student;
+
+        }
+
+
         if (currentUser) {
           console.log("Already logged in:students controller");
+          console.log(currentUser);
           appId ='OXJqhw8TXb4dgsQXw3uTo3IxYGdL1pj0qjV0g0vW';
           restId = 'TKEZxU6JOZAsTwlpbPhAnJlstvn938KtuzNhFDCU';
           students.initialize();
-          students.loadallstudents();
+
 
         } else {
             console.log("Not logged In");

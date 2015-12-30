@@ -31,7 +31,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Add Student</h4>
+          <h4 class="modal-title" id="myModalLabel">{{students.modalname}}</h4>
         </div>
         <div class="modal-body">
           <form ng-submit="students.addstudent()">
@@ -70,7 +70,7 @@
         </div> -->
           <hr>
           <button type="submit" class="btn btn-primary" >Submit</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
 
 
       </form>
@@ -83,7 +83,7 @@
 <hr>
 <!-- displaying the data -->
 
-<table class="table table-bordered">
+<table class="table ">
   <thead>
     <tr>
     <th>Roll No</th>
@@ -92,18 +92,16 @@
     <th>Parent Name</th>
     <th>Contact Info</th>
     <th>Parent Email</th>
-    <th>Edit</th>
     </tr>
   </thead>
   <tbody >
     <tr ng-repeat="student in students.loadstudents.results">
-    <td>{{student.rollno}}</td>
+    <td><button ng-click ="students.editstudent(student)" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil"></button> &nbsp;{{student.rollno}}</td>
     <td>{{student.studentname}}</td>
     <td>{{student.studentclass}}</td>
     <td>{{student.parentname}}</td>
     <td>{{student.contact}}</td>
     <td>{{student.parentemail}}</td>
-    <td><button>&#9998; Edit</button></td>
    </tr>
   </tbody>
 </table>

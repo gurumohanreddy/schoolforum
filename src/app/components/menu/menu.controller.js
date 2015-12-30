@@ -6,6 +6,7 @@ myApp.controller('MenuController',['menuservice','$state',function(menuservice,$
 
         if (currentUser) {
             console.log("Logged in :menu controller");
+            console.log(currentUser);
         } else {
             console.log("Not logged In");
             $state.go('home');
