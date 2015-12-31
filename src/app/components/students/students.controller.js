@@ -80,7 +80,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                 }).success(function(data){
                    console.log('Getting data from parse...');
                    students.loadstudents = data;
-                   $state.go('students');
+                  //  $state.go('students');
                 }).error(function(data){
                    console.log(data)
                 });
@@ -95,6 +95,23 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
         }
 
+        students.deletestudent= function(student){
+          students.newstudent = student;
+          $http({
+                   method: 'DELETE',
+                   url: 'https://api.parse.com/1/classes/students/'+students.newstudent.objectId,
+                   headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
+                   'Content-Type': 'application/json'}
+
+                }).success(function(data){
+                  students.initialize();
+                   console.log("Deleted Sucessfully");
+                }).error(function(data){
+                   console.log(data)
+                });
+
+
+        }
 
         if (currentUser) {
           console.log("Already logged in:students controller");

@@ -96,7 +96,7 @@
   </thead>
   <tbody >
     <tr ng-repeat="student in students.loadstudents.results">
-    <td><button ng-click ="students.editstudent(student)" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil"></button> &nbsp;{{student.rollno}}</td>
+    <td><button ng-click ="students.editstudent(student)" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-pencil"></button> &nbsp; <button class = "glyphicon glyphicon-remove" ng-click="students.deletestudent(student)"></button>&nbsp; {{student.rollno}}</td>
     <td>{{student.studentname}}</td>
     <td>{{student.studentclass}}</td>
     <td>{{student.parentname}}</td>
