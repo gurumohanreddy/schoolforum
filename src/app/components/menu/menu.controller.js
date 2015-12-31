@@ -19,7 +19,6 @@ myApp.controller('MenuController',['menuservice','$state',function(menuservice,$
         menu.logout = function(){
           console.log("Logged Out")
           Parse.User.logOut();
-          $state.go('home');
         }
 
         menu.menuitems = [];

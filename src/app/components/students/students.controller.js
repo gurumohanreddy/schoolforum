@@ -9,7 +9,6 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
         students.logout = function(){
           console.log("Logged Out")
           Parse.User.logOut();
-          $state.go('home');
         }
 
 
@@ -23,9 +22,9 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
         students.addstudent = function(){
 
 
-          if (students.modalname === "Add student"){
+          if (!students.newstudent.objectId){
             console.log("calling POST");
-            $http({
+                $http({
                      method: 'POST',
                      url: 'https://api.parse.com/1/classes/students',
                      headers: {'X-Parse-Application-Id': appId, 'X-Parse-REST-API-Key': restId,
@@ -34,13 +33,11 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
                   }).success(function(data){
                      console.log(data);
-                     $state.go('students');
-                     students.loadallstudents();
+                     students.initialize();
 
                   }).error(function(data){
                      console.log(data)
                   });
-              students.initialize();
           }
 
 
@@ -55,6 +52,7 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                    data: students.newstudent
 
                 }).success(function(data){
+                   students.initialize();
                    console.log(data)
 
                 }).error(function(data){
@@ -62,7 +60,6 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
 
                 });
 
-                students.initialize();
 
           }
 
@@ -80,9 +77,8 @@ myApp.controller('StudentsController',['$state','$http',function($state,$http){
                 }).success(function(data){
                    console.log('Getting data from parse...');
                    students.loadstudents = data;
-                  //  $state.go('students');
-                }).error(function(data){
                    console.log(data)
+                }).error(function(data){
                 });
 
         }
